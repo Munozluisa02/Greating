@@ -68,6 +68,7 @@ const HostControlView = () => {
           <PrimaryButton
             onPress={() => {
               setIsModalOpen(true);
+              sendControlMessage(controlMessageEnum.initiatePoll, { question, answers });
             }}
             text="Start Poll"
           />
