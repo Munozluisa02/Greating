@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { Line } from 'rc-progress';
 
 import { PollContext } from './PollContext';
+import styles from './Pollstyles';
 
 const Poll = () => {
     const { question, setQuestions, answers: voteData, setAnswers, isModalOpen, setIsModalOpen } = useContext(PollContext);
@@ -27,9 +28,11 @@ const Poll = () => {
             isOpen= {isModalOpen}
             onRequestClose= {closeModal}
             content= "PollModal"
-            style={style.customStyles}
+            style={styles.customStyles}
         >
-
+            <div>
+                <h1>{question}</h1>
+            </div>
         </Modal>
     )
 }
